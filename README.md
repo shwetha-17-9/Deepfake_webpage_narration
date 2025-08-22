@@ -34,3 +34,19 @@ Users can listen to webpage content narrated in a **deepfake-generated administr
 git clone https://github.com/shwetha-17-9/Deepfake_webpage_narration.git
 cd Deepfake_webpage_narration
 pip install -r requirements.txt
+```
+
+## Usage
+After installing the dependencies, run the Flask app:
+
+```bash
+python test.py
+```
+Then open your browser and go to:
+
+http://127.0.0.1:5000/
+The webpage will load where:
+
+Page content can be narrated using deepfake TTS.
+
+Users can select queries to receive AI-generated responses.
