@@ -1,0 +1,13 @@
+flask
+torch
+torchvision
+torchaudio
+numpy
+pandas
+nltk
+spacy
+scikit-learn
+transformers
+gTTS
+jinja2
+Werkzeug
