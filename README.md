@@ -23,13 +23,10 @@ Users can listen to webpage content narrated in a **deepfake-generated administr
   - AI Frameworks: TensorFlow / PyTorch
 
 ## Repository Contents
-- `src/` → Flask app, narration, and query handling code
-- `models/` → Voice synthesis models (not included, add download link if needed)
-- `data/` → Sample text or queries
-- `Final_Report.pdf` → Project report
-- `requirements.txt` → Dependencies
-- `README.md` → Documentation
-- `LICENSE` → Open-source license
+- Code.zip → Full source code for the project (Flask app, narration + query modules).
+- Final Report.docx → Detailed project report (Word format).
+- README.md → Documentation and usage instructions.
+- .gitignore → Git ignore rules for Python projects.
 
 ## Installation
 ```bash
