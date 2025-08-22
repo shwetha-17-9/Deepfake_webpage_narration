@@ -26,6 +26,7 @@ Users can listen to webpage content narrated in a **deepfake-generated administr
 - Code.zip → Full source code for the project (Flask app, narration + query modules).
 - Final Report.docx → Detailed project report (Word format).
 - README.md → Documentation and usage instructions.
+- requirements.txt → Dependencies
 - .gitignore → Git ignore rules for Python projects.
 
 ## Installation
