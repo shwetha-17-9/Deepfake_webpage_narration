@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMSIT AI&ML</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* Add the popup button styles */
+        #buttonContainer {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000; /* Ensure it stays on top */
+        }
+
+        .popupButton {
+            background-color: #0074cc;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-right: 10px; /* Space between buttons */
+        }
+
+        .popupButton:hover {
+            background-color: #060d11;
+            width: 170px;
+            border-radius: 17px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+            <h1>Artificial Intelligence and Machine Learning</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#reach">Reach Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Welcome Section -->
+        <section class="welcome">
+            <div class="welcome-content">
+                <img src="https://bmsit.ac.in/public/assets/images/dept/artificial.png" alt="AI Department" class="department-image">
+                <div class="vision">
+                    <h2>Vision</h2>
+                    <p>
+                        To develop professionals equipped to build sustainable and intelligent solutions that effectively interact with the natural intelligence towards creating a digitally empowered environment for future generations, safeguarding social ethics.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section-light">
+            <h2>About the Department</h2>
+            <p>
+                Artificial Intelligence and Machine Learning Department was formally inaugurated on 02-Aug-2019, in the esteemed presence of our beloved Chairman Sri. Madan Gopal, IAS and our visionary leader, Principal Dr. Mohan Babu G N and several other distinguished dignitaries. The event drafted the script for a new chapter in the history of our college to offer an undergraduate program in Artificial Intelligence and Machine Learning, a much sought-after skill set for the future.
+            </p>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section id="contact" class="section-dark">
+            <h2>Contact Us</h2>
+            <ul>
+                <li>Admissions: <b>BMS Trust Office</b> - 080-26611636</li>
+                <li><b>BMSIT Office</b> - 080-68730429 / 080-68730456 / 080-68730444</li>
+                <li><b>Fee</b>: 080-68730428</li>
+                <li><b>Hostel</b>: 9739947120 / 9741590336 / 8792347320</li>
+                <li>Email: <a href="mailto:principal@bmsit.in">principal@bmsit.in</a></li>
+                <li><b>Women Helpline Number (24x7)</b>: 080-68730452</li>
+            </ul>
+        </section>
+
+        <!-- Reach Us Section -->
+        <section id="reach" class="section-light">
+            <h2>Reach Us</h2>
+            <p>
+                <b>BMS Institute of Technology & Management</b>,<br>
+                Doddaballapur Main Road,<br>
+                Avalahalli, Yelahanka,<br>
+                Bengaluru - 560119.
+            </p>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243646.56389146514!2d77.350736!3d12.971598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae175d0f25c961%3A0x7f4eeb3e93c15b59!2sBMSIT%20AI%26ML!5e0!3m2!1sen!2sin!4v1605287155244!5m2!1sen!2sin"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </section>
+    </main>
+
+    <!-- Vocalization Buttons -->
+    <div id="buttonContainer">
+        <button class="popupButton" id="visionButton">Vision</button>
+        <button class="popupButton" id="missionButton">About</button>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 BMSIT. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Function to generate audio upon "Vision" button click
+        document.getElementById("visionButton").addEventListener("click", function() {
+            var textInput = "To develop professionals equipped to build sustainable and intelligent solutions that effectively interact with the natural intelligence towards creating a digitally empowered environment for future generations, safeguarding social ethics.";
+
+            var data = { text: textInput };
+
+            fetch("/generate-audio", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.blob())
+            .then(audioBlob => {
+                const audioUrl = URL.createObjectURL(audioBlob);
+                const audio = new Audio(audioUrl);
+                audio.play();
+            })
+            .catch(error => console.error("Error:", error));
+        });
+
+        // Function to generate audio upon "Mission" button click
+        document.getElementById("missionButton").addEventListener("click", function() {
+            var textInput = "Artificial Intelligence and Machine Learning Department was formally inaugurated on 02-Aug-2019, in the esteemed presence of our beloved Chairman Sri. Madan Gopal, IAS and our visionary leader, Principal Dr. Mohan Babu G N and several other distinguished dignitaries. The event drafted the script for a new chapter in the history of our college to offer an undergraduate program in Artificial Intelligence and Machine Learning, a much sought-after skill set for the future.";
+
+            var data = { text: textInput };
+
+            fetch("/generate-audio_1", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.blob())
+            .then(audioBlob => {
+                const audioUrl = URL.createObjectURL(audioBlob);
+                const audio = new Audio(audioUrl);
+                audio.play();
+            })
+            .catch(error => console.error("Error:", error));
+        });
+    </script>
+
+    <script src="//code.tidio.co/9rfltuc3jieczc0gejklqvs7ebncfttg.js" async></script>
+</body>
+</html>
